@@ -1,0 +1,13 @@
+version: '3.7'
+
+services:
+  app:
+    build:
+      context: .
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./meeting_planner:/meeting_planner
+    command: sh -c "python manage.py runserver 0.0.0.0:8000"
+    environment:
+      - DEBUG=1
